@@ -37,7 +37,7 @@ app.listen(config.apiService.port, function(){
 
 // 错误捕捉
 app.on('error', err => {
-    console.error(`server error: &{err}`);
+    console.error(err);
 });
 
 module.exports = app;
