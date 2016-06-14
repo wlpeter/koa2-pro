@@ -1,0 +1,29 @@
+{
+    "apiService": {
+        "sessionKey": "ac36547a3d8c118e6bf4efb659733523",
+        "port": "3010"
+    },
+    "logger": {
+        "appenders": [{
+            "type": "console"
+        }, {
+            "type": "dateFile",
+            "filename": "logs/app.log",
+            "pattern": "-yyyy-MM-dd",
+            "maxLogSize": "1024",
+            "category": "common"
+        }, {
+            "type": "dateFile",
+            "filename": "logs/logics.log",
+            "pattern": "-yyyy-MM-dd",
+            "maxLogSize": "1024",
+            "category": "logics"
+        }],
+        "replaceConsole": true
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": "6379",
+        "ttl": "3600"
+    }
+}
