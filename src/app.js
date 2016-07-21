@@ -25,8 +25,8 @@ app.keys = [config.apiService.sessionKey];
 // 中间件
 app
     .use(logger.middleLogger())
-    .use(serve(`&{__dirname}/../public/dist`))
-    .use(views(`&{__dirname}/../public/views`, {map: {html: 'ejs'}}))
+    .use(serve(`${__dirname}/../public/dist`))
+    .use(views(`${__dirname}/../public/views`, {map: {html: 'ejs'}}))
     .use(router.routes(), router.allowedMethods())
     .use(convert(koaBody({multipart: true,formidable: {keepExtensions: true}})));
 
