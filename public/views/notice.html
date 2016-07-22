@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://fonts.useso.com/css?family=Audiowide" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="/css/main.css" rel="stylesheet">
+    <!-- Icon CSS -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>关于</title>
+</head>
+<body>
+    <%- include('./common/header.html') -%>
+    <div class="container bdbody">
+        <div class="jumbotron ntpart">
+            <% if (result.statusCode == "MK001") { %>
+                <input type="hidden" name="activeCode" value="<%= result.activeCode %>">
+                <h2><i class="fa fa-check-circle text-green"></i>&nbsp;已发送</h2>
+                <p class="lead">注册邮件已发送，请前往邮箱查收。如果未收到邮件，请点击如下按钮重新发送。</p>
+                <p><a id="reMail" class="btn btn-lg btn-success" href="javascript:void(0)" role="button">重新发送</a></p>
+            <% } else if (result.statusCode == "MK002") { %>
+                <input type="hidden" name="activeCode" value="<%= result.activeCode %>">
+                <h2><i class="fa fa-warning text-yellow"></i>&nbsp;未完成注册</h2>
+                <p class="lead">请点击如下按钮，重新发送注册认证邮件，继续完成注册。</p>
+                <p><a id="reMail" class="btn btn-lg btn-success" href="javascript:void(0)" role="button">重新发送</a></p>
+            <% } else if (result.statusCode == "MK003") { %>
+                <h2><i class="fa fa-check-circle text-green"></i>&nbsp;注册成功</h2>
+                <p class="lead">请点击如下按钮，进入主页。</p>
+                <p><a class="btn btn-lg btn-success" href="/" role="button">回主页</a></p>
+            <% } else if (result.statusCode == "MK004") { %>
+                <h2><i class="fa fa-times-circle text-red"></i>&nbsp;激活失败</h2>
+                <p class="lead">请点击如下按钮，重新注册。</p>
+                <p><a class="btn btn-lg btn-success" href="/register" role="button">重新注册</a></p>
+            <% } %>
+            <small class="help-block alert alert-danger"></small>
+        </div>
+    </div>
+    <%- include('./common/footer.html') -%>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/notice.js"></script>
+</body>
+
+</html>

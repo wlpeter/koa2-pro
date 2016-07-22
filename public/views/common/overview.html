@@ -1,0 +1,64 @@
+<!-- User Info -->
+<div class="col-xs-10 col-xs-offset-2 account-view">
+    <!-- user show-->
+    <div id="user-overview" class="show-overview">
+        <img src="<%= userPart.iconLink %>" alt="" class="tag-img big-header-img"/>
+        <article>
+            <h3 class="userFullName">
+                <%= userPart.userName %>
+                <a href="#" title="修改个人信息"><i class="fa fa-edit"></i></a>
+            </h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-bar-chart color-icon"></i>
+                    <span class="text-tag">人物等级 : </span>
+                    <span id="code" class="text-tag"><%= userPart.userLevel %></span>
+                </div>
+                <div class="col-sm-6" style="border-left:1px solid #DDD;">
+                    <i class="fa fa-trophy color-icon" ></i>
+                    <span class="text-tag">积分 : </span>
+                    <span id="code" class="text-tag"><%= userPart.points %></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-suitcase color-icon"></i>
+                    <span class="text-tag">职位类型 : </span>
+                    <span id="code" class="text-tag"><%= userPart.userJob %></span>
+                </div>
+                <div class="col-sm-6" style="border-left:1px solid #DDD;">
+                    <i class="fa fa-magnet color-icon"></i>
+                    <span class="text-tag">性别 : </span>
+                    <span id="code" class="text-tag"><%= userPart.sex %></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <i class="fa fa-magic color-icon"></i>
+                    <span class="text-tag">个人语录 : </span>
+                    <span id="code" class="text-tag"><%= userPart.signs %></span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- team show-->
+    <div id="team-overview" class="show-overview">
+        <div class="row">
+            <div style="" class="col-lg-3 col-md-3 col-sm-6">
+                <div class="envor-feature">
+                    <div class="envor-feature-inner">
+                        <header>
+                            <i class="fa fa-globe"></i>创客空间
+                            <span class="arrow-color"></span></header>
+                        <p>技术交流，共同创业.</p>
+                        <p><a href="">Details <i class="fa fa-arrow-circle-right"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- article list show-->
+    <div id="listGroup" class="show-overview">加载中...</div>
+</div>

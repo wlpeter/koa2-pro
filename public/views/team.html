@@ -16,50 +16,19 @@
     <!-- Icon CSS -->
     <link href="/css/font-awesome.min.css" rel="stylesheet">
 
-    <title>TEST</title>
+    <title>团队</title>
 </head>
 <body>
     <%- include('./common/header.html') -%>
-
-    <div class="banner">
-        <div class="container">
-    		<div class="banner-info">
-    			<h3><%= active.title %></h3>
-    			<p><%= active.description %></p>
-    			<div class="more">
-    				<a class="test" href="javascript:void(0);">GO!</a>
-    			</div>
-    		</div>
-    	</div>
-	</div>
-
     <div class="container bdbody">
-        <div>
-            <div class="page-header">
-                <h2>Classify</h2>
-            </div>
-            <%- include('./common/tags.html') -%>
-        </div>
-        <div style="margin-bottom: 20px;">
-            <div class="page-header">
-                <h2>New Posts</h2>
-            </div>
-            <div id="listGroup"><div class="list-group">加载中...</div></div>
-        </div>
-
     </div>
-    <div id="backtotop">回到顶部</div>
     <%- include('./common/footer.html') -%>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/lib/react.js"></script>
-    <script src="/js/lib/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script type="text/babel" src="/js/common.js"></script>
 </body>
 
 </html>

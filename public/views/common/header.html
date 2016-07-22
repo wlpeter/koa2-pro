@@ -1,0 +1,40 @@
+<nav id="top-menu" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button id="header-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/"><span class="header-title" href="#">Maker Room</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse header-part">
+            <ul class="nav navbar-nav header-param">
+                <li>
+                    <form class="navbar-form search-form">
+                        <input type="text" name="search" class="form-control" placeholder="Search...">
+                    </form>
+                </li>
+                <li class="navigation"><a href="/">首页</a></li>
+                <li class="navigation"><a href="/about">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right header-param log-part">
+                <% if (!userInfo || !userInfo.userName) { %>
+                    <li class="navigation"><a href="/register">注册</a></li>
+                    <li class="navigation"><a href="/login">登录</a></li>
+                <% } else { %>
+                    <li id="userInfo" class="navigation user-info">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span id="userName"><%= userInfo.userName %></span> <span id="notice" class="badge"></span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">消息<span id="notice" class="badge notice-tag"></span></a></li>
+                            <li><a href="/user/account">账户设置</a></li>
+                            <li><a href="/logout">登出</a></li>
+                        </ul>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

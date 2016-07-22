@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://fonts.useso.com/css?family=Audiowide" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="/css/main.css" rel="stylesheet">
+    <!-- Icon CSS -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>TEST</title>
+</head>
+
+<body>
+    <%- include('./common/header.html') -%>
+
+    <div class="container bdbody">
+        <% if (type == "register") { %>
+            <form id="myform" class="form-signin" method="post" action="/register">
+                <div class="page-header">
+                    <h3>用户注册</h3>
+                </div>
+        <% } else { %>
+            <form id="myform" class="form-signin" method="post" action="/login">
+                <div class="page-header">
+                    <h3>用户登录</h3>
+                </div>
+        <% } %>
+            <% if (errorMessage) { %>
+                <small class="help-block alert alert-danger" style="display:block;"><%= errorMessage %></small>
+            <% } %>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                <input type="email" id="email" name="email" class="form-control" placeholder="邮箱" style="ime-mode:disabled;" />
+            </div>
+            <small class="help-block alert alert-danger"></small>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" id="password" name="password" class="form-control" maxlength="16" placeholder="密码" style="ime-mode:disabled;" />
+            </div>
+            <small class="help-block alert alert-danger"></small>
+
+            <% if (type == "register") { %>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="password" id="rePassword" name="rePassword" class="form-control" maxlength="16" placeholder="确认密码" style="ime-mode:disabled;" />
+                </div>
+                <small class="help-block alert alert-danger"></small>
+                <div style="height: 54px;">
+                    <input type="text" id="checkCode" name="checkCode" class="form-control layout-inner" placeholder="验证码" style="ime-mode:disabled;"/>
+                    <div class="imgcode">
+                        <img id="captcha" src="/register/captcha" alt="验证码" />
+                    </div>
+                </div>
+                <small class="help-block alert alert-danger" style="margin-top:0px;"></small>
+                <div class="checkbox" style="clear:both;">
+                    <label>
+                        <input name="ruleCheck" type="checkbox" value="1">同意<a href="#">注册守则</a>
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="button" >注册</button>
+            <% } else { %>
+                <button class="btn btn-lg btn-primary btn-block" type="button" >登录</button>
+            <% } %>
+            <small class="help-block alert alert-danger" style="margin-top:10px;"></small>
+        </form>
+    </div>
+
+    <%- include('./common/footer.html') -%>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+    <script src="/js/lib/core-min.js"></script>
+    <script src="/js/lib/md5-min.js"></script>
+    <script type="text/babel" src="/js/logReg.js"></script>
+</body>
+
+</html>

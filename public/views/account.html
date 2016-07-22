@@ -16,40 +16,33 @@
     <!-- Icon CSS -->
     <link href="/css/font-awesome.min.css" rel="stylesheet">
 
-    <title>TEST</title>
+    <title>Account</title>
 </head>
+
 <body>
     <%- include('./common/header.html') -%>
+    <div class="bdbody row" style="background: #F7F6F2;">
 
-    <div class="banner">
-        <div class="container">
-    		<div class="banner-info">
-    			<h3><%= active.title %></h3>
-    			<p><%= active.description %></p>
-    			<div class="more">
-    				<a class="test" href="javascript:void(0);">GO!</a>
-    			</div>
-    		</div>
-    	</div>
-	</div>
-
-    <div class="container bdbody">
-        <div>
-            <div class="page-header">
-                <h2>Classify</h2>
-            </div>
-            <%- include('./common/tags.html') -%>
+        <!-- Left Menu -->
+        <div class="col-xs-2 left-menu">
+            <header class="header item">
+                账户
+                <article>
+                    包括用户账户、个人以及团队设置信息
+                </article>
+            </header>
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#"><i class="fa fa-dashboard"></i><span>概览</span></a></li>
+                <li><a href="#"><i class="fa fa-user"></i><span>账户信息</span></a></li>
+                <li><a href="#"><i class="fa fa-sitemap"></i><span>团队管理</span></a></li>
+                <li><a href="#"><i class="fa fa-lock"></i><span>安全设置</span></a></li>
+            </ul>
         </div>
-        <div style="margin-bottom: 20px;">
-            <div class="page-header">
-                <h2>New Posts</h2>
-            </div>
-            <div id="listGroup"><div class="list-group">加载中...</div></div>
-        </div>
-
+        <% if (pageType == "overview") { %>
+            <%- include('./common/overview.html') -%>
+        <% } %>
     </div>
     <div id="backtotop">回到顶部</div>
-    <%- include('./common/footer.html') -%>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

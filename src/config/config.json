@@ -1,7 +1,28 @@
 {
     "apiService": {
-        "sessionKey": "ac36547a3d8c118e6bf4efb659733523",
-        "port": "3010"
+        "sessionKey": "yuute4f939ca8ffe00b47dad052deaf78a7bb6aa437412fb315abedb0c8c8683f7b04b61799e438d54b",
+        "port": "3010",
+        "website": "http://120.76.138.199:3010"
+    },
+    "mongodb": {
+        "uri": "mongodb://blogUserWR:qwerasdf@127.0.0.1:27017/makeRoom",
+        "options": {
+            "db": {
+                "native_parser": "true"
+            },
+            "server": {
+                "auto_reconnect": "true",
+                "poolSize": "5"
+            }
+        }
+    },
+    "safe": {
+        "appSecret": "Odi8k91W7u"
+    },
+    "email": {
+        "host": "smtp.163.com",
+        "user": "makeroomadmin@163.com",
+        "pass": "zml1234"
     },
     "logger": {
         "appenders": [{
